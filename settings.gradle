@@ -1,1 +1,1 @@
-include ':app', ':companent', ':recyclerviewdemo', ':treeviewdemo'
+include ':app', ':recyclerviewdemo', ':treeviewdemo'
