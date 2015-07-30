@@ -1,0 +1,10 @@
+SurfaceView extends View
+其实View是在UI线程中进行绘制的
+SurfaceView是在一个子线程中对自己进行绘制的，优势：避免造成UI线程的阻塞
+其实呢，我们SurfaceView中包含了一个专门用于绘制的Surface,Surface中包含了Canvas
+如何获得Canvas？
+getHolder -> SurfaceHolder
+holder -> Canvas + 管理SurfaceView的生命周期
+surfaceCreated
+surfaceChanged
+surfaceDestoryed
