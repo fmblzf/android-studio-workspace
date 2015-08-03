@@ -4,14 +4,40 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 
 
 public class MainActivity extends ActionBarActivity {
+
+    private LuckyPan luckypan;
+    private ImageView luckButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        luckypan = (LuckyPan) this.findViewById(R.id.luckypan);
+
+        luckButton = (ImageView) this.findViewById(R.id.luck_button);
+
+        luckButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!luckypan.isStart()){
+                    //¿ªÊ¼Ðý×ª
+                    luckypan.luckyStart();
+                    luckButton.setImageResource(R.mipmap.stop);
+                }else{
+                    if(!luckypan.isShouldEnd()) {
+                        luckypan.luckyEnd();
+                        luckButton.setImageResource(R.mipmap.start);
+                    }
+                }
+
+            }
+        });
     }
 
     @Override
