@@ -103,7 +103,7 @@ public class LuckyPan extends SurfaceView implements SurfaceHolder.Callback, Run
      * 绘制的初始角度
      * volatile为了使各个线程之间是可见的
      */
-    private volatile int mStartAngle = 0;
+    private volatile float mStartAngle = 0;
     /**
      * 标记着是否应该结束
      */
@@ -224,8 +224,41 @@ public class LuckyPan extends SurfaceView implements SurfaceHolder.Callback, Run
     /**
      *转盘开始旋转
      */
-    public void luckyStart(){
-        mSpeed = 50;
+    public void luckyStart(int index){
+//        int index = 0;
+
+        //计算每个区块的角度
+        float angle = 360/mItemCount;
+
+        //计算每个分区对应的起始角度
+        float from = 270 - angle*(index+1);
+        float end = angle + from;
+
+        //设置指针转过的距离的范围
+        float targetFrom = 4*360+from;
+        float targetEnd = 4*360+end;
+
+        /**
+         * <pre>
+         *
+         *     计算速度公式
+         *     指针速度变化是 v1、v2->0
+         *     距离是targetFrom -> targetEnd之间
+         *     求解速度 v1、v2,v1、v2是以递减1的等差数列
+         *     (v1+0)*(v1+1)/2 = targetFrom; -> v1*v1 + v1 - 2*targetFrom = 0;
+         *     (v2+0)*(v2+1)/2 = targetEnd;  -> v2*v2 + v2 - 2*targetEnd = 0;
+         *     v1 = (-1+Math.sqrt(1+8*targetFrom))/2;
+         *     v2 = (-1+Math.sqrt(1+8*targetEnd))/2;
+         *
+         * </pre>
+         *
+         */
+        float v1 = (float) ((-1+Math.sqrt(1+8*targetFrom))/2);
+        float v2 = (float) ((-1+Math.sqrt(1+8*targetEnd))/2);
+
+        //速度设置成v1~v2之间的随机数
+        mSpeed = v1 + Math.random()*(v2 - v1);
+//        mSpeed = v2;
         isShouldEnd = false;
     }
 
@@ -233,6 +266,7 @@ public class LuckyPan extends SurfaceView implements SurfaceHolder.Callback, Run
      *转盘停止旋转
      */
     public void luckyEnd(){
+        mStartAngle = 0;
         isShouldEnd = true;
     }
 
@@ -280,7 +314,7 @@ public class LuckyPan extends SurfaceView implements SurfaceHolder.Callback, Run
         }
 
         mStartAngle += mSpeed;
-        mStartAngle %= 360;
+        //mStartAngle %= 360;
 
         //如果点击了停止
         if(isShouldEnd){
@@ -288,6 +322,7 @@ public class LuckyPan extends SurfaceView implements SurfaceHolder.Callback, Run
         }
         if(mSpeed<=0){
             mSpeed = 0;
+//            mStartAngle = 0;
         }
 
     }

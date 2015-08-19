@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/reveal/reveal.iml" filepath="$PROJECT_DIR$/reveal/reveal.iml" />
       <module fileurl="file://$PROJECT_DIR$/surfaceviewdemo/surfaceviewdemo.iml" filepath="$PROJECT_DIR$/surfaceviewdemo/surfaceviewdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/treeviewdemo/treeviewdemo.iml" filepath="$PROJECT_DIR$/treeviewdemo/treeviewdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vediomodel/vediomodel.iml" filepath="$PROJECT_DIR$/vediomodel/vediomodel.iml" />
     </modules>
   </component>
 </project>

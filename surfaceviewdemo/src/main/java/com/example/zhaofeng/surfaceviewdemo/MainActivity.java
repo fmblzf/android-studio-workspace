@@ -27,7 +27,7 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View v) {
                 if(!luckypan.isStart()){
                     //¿ªÊ¼Ðý×ª
-                    luckypan.luckyStart();
+                    luckypan.luckyStart(1);
                     luckButton.setImageResource(R.mipmap.stop);
                 }else{
                     if(!luckypan.isShouldEnd()) {
