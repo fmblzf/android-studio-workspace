@@ -29,7 +29,7 @@ public class SurfaceViewTemplate extends SurfaceView implements SurfaceHolder.Ca
     private boolean isRunning = false;
 
     public SurfaceViewTemplate(Context context) {
-        this(context,null);
+        this(context, null);
     }
 
     public SurfaceViewTemplate(Context context, AttributeSet attrs) {
@@ -78,6 +78,9 @@ public class SurfaceViewTemplate extends SurfaceView implements SurfaceHolder.Ca
             mCanvas = holder.lockCanvas();
             if(mCanvas != null){
                 //draw something
+
+
+
             }
         }catch (Exception e){
 
@@ -88,4 +91,5 @@ public class SurfaceViewTemplate extends SurfaceView implements SurfaceHolder.Ca
             }
         }
     }
+
 }
