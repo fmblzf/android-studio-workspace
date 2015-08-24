@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AndroidStudioTest.iml" filepath="$PROJECT_DIR$/AndroidStudioTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android-studio-workspace.iml" filepath="$PROJECT_DIR$/android-studio-workspace.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/companent/companent.iml" filepath="$PROJECT_DIR$/companent/companent.iml" />
       <module fileurl="file://$PROJECT_DIR$/recyclerviewdemo/recyclerviewdemo.iml" filepath="$PROJECT_DIR$/recyclerviewdemo/recyclerviewdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/reveal/reveal.iml" filepath="$PROJECT_DIR$/reveal/reveal.iml" />
       <module fileurl="file://$PROJECT_DIR$/surfaceviewdemo/surfaceviewdemo.iml" filepath="$PROJECT_DIR$/surfaceviewdemo/surfaceviewdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/treeviewdemo/treeviewdemo.iml" filepath="$PROJECT_DIR$/treeviewdemo/treeviewdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/weixinshare/weixinshare.iml" filepath="$PROJECT_DIR$/weixinshare/weixinshare.iml" />
     </modules>
   </component>
 </project>
